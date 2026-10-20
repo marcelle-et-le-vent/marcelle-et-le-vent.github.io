@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Marcelle et le Vent - Linogravures artisanales</title>
+  <meta name="description" content="Marcelle et le Vent - Linogravures dessinées, gravées et imprimées à l'atelier.">
+  <!-- Icônes : onglet du navigateur, écrans haute définition, écran d'accueil iPhone -->
+  <link rel="icon" href="favicon.ico" sizes="48x48">
+  <link rel="icon" href="images/logo/icone-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="images/logo/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- TODO : lien Etsy — remplacer les href="#" marqués « Etsy » (4 endroits) -->
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="site-header__brand" href="#accueil">Marcelle et le Vent</a>
+      <img class="site-header__logo" src="images/logo/logo.webp" alt="" width="168" height="165">
+      <nav aria-label="Navigation principale">
+        <ul class="site-nav">
+          <li><a href="#estampes">Estampes</a></li>
+          <li><a href="#a-propos">À propos</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a class="site-nav__shop" href="#">Boutique <span aria-hidden="true">↗</span></a></li><!-- Etsy -->
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenu">
+
+    <!-- 1. Accueil -->
+    <section id="accueil" class="section hero">
+      <div class="container hero__inner">
+        <div class="hero__text">
+          <h1 class="hero__title">Marcelle <span class="hero__title-line">et le Vent</span></h1>
+          <p class="hero__lead">Linogravures dessinées, gravées et imprimées à l'atelier.</p>
+          <a class="button" href="#">Voir la boutique <span aria-hidden="true">↗</span></a><!-- Etsy -->
+        </div>
+        <img class="hero__image" src="images/gallery/image-vitrine-encre.webp" width="1400" height="1550"
+             alt="Linogravure à l'encre noire : une silhouette en maillot de bain, penchée au bout d'un plongeoir, s'apprête à plonger dans un grand livre ouvert.">
+      </div>
+    </section>
+
+    <!-- 2. Estampes -->
+    <section id="estampes" class="section" aria-labelledby="estampes-titre">
+      <div class="container">
+        <h2 id="estampes-titre">Estampes</h2>
+        <ul class="gallery">
+          <!-- Modèle d'une œuvre — dupliquer pour en ajouter :
+          <li>
+            <figure class="gallery__item">
+              <img src="images/gallery/nom-du-fichier.jpg" alt="Description de l'estampe" width="800" height="1000" loading="lazy">
+              <figcaption>Titre — détails (format, couleurs, tirage)</figcaption>
+            </figure>
+          </li>
+          -->
+          <li><figure class="gallery__item"><div class="placeholder" role="img" aria-label="Image à venir"></div><figcaption>Titre de l'estampe</figcaption></figure></li>
+          <li><figure class="gallery__item"><div class="placeholder" role="img" aria-label="Image à venir"></div><figcaption>Titre de l'estampe</figcaption></figure></li>
+          <li><figure class="gallery__item"><div class="placeholder" role="img" aria-label="Image à venir"></div><figcaption>Titre de l'estampe</figcaption></figure></li>
+        </ul>
+        <p class="gallery__more">
+          <a class="button" href="#">Toutes les estampes sur Etsy <span aria-hidden="true">↗</span></a><!-- Etsy -->
+        </p>
+      </div>
+    </section>
+
+    <!-- 3. À propos -->
+    <section id="a-propos" class="section" aria-labelledby="a-propos-titre">
+      <div class="container about">
+        <!-- TODO : photo (atelier, gravure…). Remplacer le bloc par :
+        <img class="about__photo" src="images/display/nom-du-fichier.jpg" alt="Description de la photo" width="800" height="1000" loading="lazy">
+        -->
+        <div class="about__photo placeholder" role="img" aria-label="Photo à venir"></div>
+        <div class="about__text">
+          <h2 id="a-propos-titre">À propos</h2>
+          <p><strong>Marcelle et le Vent</strong> répond à deux passions combinées, l'une pour le dessin, l'autre pour la littérature.</p>
+          <p>Petit atelier basé dans le Sud de la France, <strong>Marcelle et le Vent</strong> propose des illustrations obtenues par linogravure.</p>
+          <p>Le procédé consiste à reporter un dessin sur une plaque de linoléum, laquelle est ensuite gravée. Cette matrice est alors encrée puis tamponnée sur du papier. Ces impressions sont appelées estampes.</p>
+          <p>Chaque impression revêt un caractère unique et révèle des variations qui lui sont propres.</p>
+          <p>Les dessins sont imaginés et réalisés par Barbara B.&nbsp;; elle grave les plaques et imprime elle-même. Le procédé est donc entièrement artisanal.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Contact : boutique, Instagram, e-mail -->
+    <section id="contact" class="section" aria-labelledby="contact-titre">
+      <div class="container">
+        <h2 id="contact-titre">Contact</h2>
+        <p class="contact__intro">Pour toute demande particulière, n'hésitez pas à me contacter <a href="mailto:marcelleetlevent@gmail.com">par e-mail</a>.</p>
+        <ul class="contact-list">
+          <li class="contact-list__shop">
+            <span class="contact-list__label">Boutique</span>
+            <a href="#">Etsy <span aria-hidden="true">↗</span></a><!-- Etsy -->
+          </li>
+          <li>
+            <span class="contact-list__label">Également sur</span>
+            <a href="https://www.vinted.fr/member/15245684">Vinted <span aria-hidden="true">↗</span></a>
+          </li>
+          <li>
+            <span class="contact-list__label">Instagram</span>
+            <!-- TODO : lien Instagram -->
+            <a href="#">Instagram <span aria-hidden="true">↗</span></a>
+          </li>
+          <li>
+            <span class="contact-list__label">E-mail</span>
+            <a href="mailto:marcelleetlevent@gmail.com">marcelleetlevent@gmail.com</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© Marcelle et le Vent</p>
+    </div>
+  </footer>
+</body>
+</html>
