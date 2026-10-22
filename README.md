@@ -2,12 +2,14 @@
 Site vitrine de Marcelle et le Vent, atelier de linogravure.
 
 Site statique (HTML + CSS, sans JavaScript ni outil de build), hébergé sur GitHub Pages :
-https://marcelle-et-le-vent.github.io
+https://marcelle-et-le-vent.fr
 
 ## Structure
 
 ```
-index.html            Page unique : accueil, estampes, à propos, contact
+index.html            Page principale : accueil, estampes, à propos, contact
+mentions-legales.html Mentions légales (lien en bas de page)
+CNAME                 Nom de domaine (marcelle-et-le-vent.fr), géré depuis GitHub
 css/style.css         Styles — couleurs, polices et espacements en haut du fichier
 fonts/                Polices hébergées dans le site (Barlow Condensed, DM Sans) et leurs licences
 favicon.ico           Icône de l'onglet du navigateur

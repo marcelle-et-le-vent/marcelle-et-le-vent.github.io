@@ -259,6 +259,18 @@ a:hover {
   color: var(--color-ink-soft);
 }
 
+/* Copyright à gauche, lien « Mentions légales » à droite */
+.site-footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-xs) var(--space-m);
+}
+
+.site-footer p {
+  margin: 0;
+}
+
 
 /* 5. Sections
    -------------------------------------------------------------------------- */
@@ -340,6 +352,20 @@ a:hover {
   .about__text {
     padding-left: 0;
   }
+}
+
+/* Page Mentions légales : une colonne de texte */
+.legal {
+  max-width: calc(var(--width-text) + 2 * var(--gutter));
+}
+
+.legal h1 {
+  font-size: var(--text-h2);
+}
+
+.legal h2 {
+  margin: var(--space-l) 0 var(--space-s);
+  font-size: 1.5rem;
 }
 
 /* Contact : phrase d'introduction, puis une colonne par lien (empilées sur mobile) */
