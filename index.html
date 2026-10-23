@@ -14,19 +14,19 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <!-- TODO : lien Etsy — remplacer les href="#" marqués « Etsy » (4 endroits) -->
+  <!-- TODO : lien Etsy — remplacer les href="#" marqués « Etsy » (index.html, estampes.html, mentions-legales.html) -->
   <a class="skip-link" href="#contenu">Aller au contenu</a>
 
   <header class="site-header">
     <div class="container site-header__inner">
       <a class="site-header__brand" href="#accueil">Marcelle et le Vent</a>
-      <img class="site-header__logo" src="images/logo/logo.webp" alt="" width="168" height="165">
+      <a class="site-header__logo" href="#accueil"><img src="images/logo/logo.webp" alt="Accueil" width="168" height="165"></a>
       <nav aria-label="Navigation principale">
         <ul class="site-nav">
-          <li><a href="#estampes">Estampes</a></li>
+          <li><a href="estampes.html">Estampes</a></li>
           <li><a href="#a-propos">À propos</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li><a class="site-nav__shop" href="#">Boutique <span aria-hidden="true">↗</span></a></li><!-- Etsy -->
+          <li><a class="site-nav__shop" href="#">Boutique <span class="icon-external" aria-hidden="true"></span></a></li><!-- Etsy -->
         </ul>
       </nav>
     </div>
@@ -40,32 +40,104 @@
         <div class="hero__text">
           <h1 class="hero__title">Marcelle <span class="hero__title-line">et le Vent</span></h1>
           <p class="hero__lead">Linogravures imaginées, gravées et imprimées à l'atelier.</p>
-          <a class="button" href="#">Voir la boutique <span aria-hidden="true">↗</span></a><!-- Etsy -->
+          <a class="button" href="#">Voir la boutique <span class="icon-external" aria-hidden="true"></span></a><!-- Etsy -->
         </div>
         <img class="hero__image" src="images/gallery/image-vitrine-encre.webp" width="1400" height="1550"
-             alt="Linogravure à l'encre noire : une silhouette en maillot de bain, penchée au bout d'un plongeoir, s'apprête à plonger dans un grand livre ouvert.">
+             alt="Linogravure « Plongeons » à l'encre noire : une silhouette en maillot de bain, penchée au bout d'un plongeoir, s'apprête à plonger dans un grand livre ouvert.">
       </div>
     </section>
 
-    <!-- 2. Estampes -->
+    <!-- 2. Estampes : carrousel d'une sélection (jamais deux versions d'une même estampe côte à côte).
+         Un clic sur une estampe l'ouvre dans la visionneuse, avec un lien vers sa collection. -->
     <section id="estampes" class="section" aria-labelledby="estampes-titre">
       <div class="container">
-        <h2 id="estampes-titre">Estampes</h2>
-        <ul class="gallery">
-          <!-- Modèle d'une œuvre — dupliquer pour en ajouter :
-          <li>
-            <figure class="gallery__item">
-              <img src="images/gallery/nom-du-fichier.jpg" alt="Description de l'estampe" width="800" height="1000" loading="lazy">
-              <figcaption>Titre — détails (format, couleurs, tirage)</figcaption>
-            </figure>
+        <div class="section-head">
+          <h2 id="estampes-titre">Estampes</h2>
+          <!-- Flèches : affichées par js/carousel.js (sans JavaScript, on fait défiler à la main) -->
+          <div class="carousel__controls" hidden>
+            <button class="carousel__button" type="button" data-carousel-prev aria-label="Estampes précédentes">←</button>
+            <button class="carousel__button" type="button" data-carousel-next aria-label="Estampes suivantes">→</button>
+          </div>
+        </div>
+        <ul class="carousel" data-carousel aria-label="Sélection d'estampes">
+          <li class="print-card">
+            <a class="print-card__zoom" href="images/gallery/Plongeons_VertigeDeLire_BleuOutreMer_PapierNaturel_retouche.webp" data-zoom data-collection-href="estampes.html#vertige-de-lire">
+              <img src="images/gallery/Plongeons_VertigeDeLire_BleuOutreMer_PapierNaturel_retouche.webp" width="1171" height="1600" loading="lazy" decoding="async"
+                   alt="Linogravure « Plongeons », encre bleu outremer sur papier naturel.">
+            </a>
+            <p class="print-card__collection">Vertige de lire</p>
+            <h3 class="print-card__title">Plongeons</h3>
+            <p class="print-card__meta">Bleu outremer · Papier naturel</p>
+            <p class="print-card__note">Tirage numéroté</p>
           </li>
-          -->
-          <li><figure class="gallery__item"><div class="placeholder" role="img" aria-label="Image à venir"></div><figcaption>Titre de l'estampe</figcaption></figure></li>
-          <li><figure class="gallery__item"><div class="placeholder" role="img" aria-label="Image à venir"></div><figcaption>Titre de l'estampe</figcaption></figure></li>
-          <li><figure class="gallery__item"><div class="placeholder" role="img" aria-label="Image à venir"></div><figcaption>Titre de l'estampe</figcaption></figure></li>
+          <li class="print-card">
+            <a class="print-card__zoom" href="images/gallery/II_LisonsLaPluieSeTait_TerraCotta_PapierNaturel_retouche.webp" data-zoom data-collection-href="estampes.html#lisons-la-pluie-se-tait">
+              <img src="images/gallery/II_LisonsLaPluieSeTait_TerraCotta_PapierNaturel_retouche.webp" width="1175" height="1600" loading="lazy" decoding="async"
+                   alt="Linogravure « Lisons, la pluie se tait II », encre terracotta sur papier naturel.">
+            </a>
+            <p class="print-card__collection">Lisons, la pluie se tait</p>
+            <h3 class="print-card__title">II</h3>
+            <p class="print-card__meta">Terracotta · Papier naturel</p>
+          </li>
+          <li class="print-card">
+            <a class="print-card__zoom" href="images/gallery/I_Ronron_Noir_PapierLisse_retouche.webp" data-zoom data-collection-href="estampes.html#ronron">
+              <img src="images/gallery/I_Ronron_Noir_PapierLisse_retouche.webp" width="1174" height="1600" loading="lazy" decoding="async"
+                   alt="Linogravure « Ronron I », encre noire sur papier lisse.">
+            </a>
+            <p class="print-card__collection">Ronron</p>
+            <h3 class="print-card__title">I</h3>
+            <p class="print-card__meta">Noir · Papier lisse</p>
+          </li>
+          <li class="print-card">
+            <a class="print-card__zoom" href="images/gallery/I_AuCreuxDunLivre_Bleu_Coton_retouche.webp" data-zoom data-collection-href="estampes.html#au-creux-dun-livre">
+              <img src="images/gallery/I_AuCreuxDunLivre_Bleu_Coton_retouche.webp" width="1172" height="1600" loading="lazy" decoding="async"
+                   alt="Linogravure « Au creux d'un livre I », encre bleue sur papier coton.">
+            </a>
+            <p class="print-card__collection">Au creux d'un livre</p>
+            <h3 class="print-card__title">I</h3>
+            <p class="print-card__meta">Bleu · Papier coton</p>
+          </li>
+          <li class="print-card">
+            <a class="print-card__zoom" href="images/gallery/Grimpons_VertigeDeLire_Bleu_PapierNaturel_retouche.webp" data-zoom data-collection-href="estampes.html#vertige-de-lire">
+              <img src="images/gallery/Grimpons_VertigeDeLire_Bleu_PapierNaturel_retouche.webp" width="1174" height="1600" loading="lazy" decoding="async"
+                   alt="Linogravure « Grimpons », encre bleue sur papier naturel.">
+            </a>
+            <p class="print-card__collection">Vertige de lire</p>
+            <h3 class="print-card__title">Grimpons</h3>
+            <p class="print-card__meta">Bleu · Papier naturel</p>
+            <p class="print-card__note">Tirage numéroté</p>
+          </li>
+          <li class="print-card">
+            <a class="print-card__zoom" href="images/gallery/V_LisonsLaPluieSeTait_Noir_PapierNaturel_retouche.webp" data-zoom data-collection-href="estampes.html#lisons-la-pluie-se-tait">
+              <img src="images/gallery/V_LisonsLaPluieSeTait_Noir_PapierNaturel_retouche.webp" width="1174" height="1600" loading="lazy" decoding="async"
+                   alt="Linogravure « Lisons, la pluie se tait V », encre noire sur papier naturel.">
+            </a>
+            <p class="print-card__collection">Lisons, la pluie se tait</p>
+            <h3 class="print-card__title">V</h3>
+            <p class="print-card__meta">Noir · Papier naturel</p>
+          </li>
+          <li class="print-card">
+            <a class="print-card__zoom" href="images/gallery/II_Ronron_Bleu_PapierNaturel_retouche.webp" data-zoom data-collection-href="estampes.html#ronron">
+              <img src="images/gallery/II_Ronron_Bleu_PapierNaturel_retouche.webp" width="1171" height="1600" loading="lazy" decoding="async"
+                   alt="Linogravure « Ronron II », encre bleue sur papier naturel.">
+            </a>
+            <p class="print-card__collection">Ronron</p>
+            <h3 class="print-card__title">II</h3>
+            <p class="print-card__meta">Bleu · Papier naturel</p>
+            <p class="print-card__note">Tirage numéroté</p>
+          </li>
+          <li class="print-card">
+            <a class="print-card__zoom" href="images/gallery/EntronsLaPluieMurmure_Entrons_Bleu_PapierNaturel_retouche.webp" data-zoom data-collection-href="estampes.html#entrons">
+              <img src="images/gallery/EntronsLaPluieMurmure_Entrons_Bleu_PapierNaturel_retouche.webp" width="1174" height="1600" loading="lazy" decoding="async"
+                   alt="Linogravure « Entrons, la pluie murmure », encre bleue sur papier naturel.">
+            </a>
+            <p class="print-card__collection">Entrons</p>
+            <h3 class="print-card__title">Entrons, la pluie murmure</h3>
+            <p class="print-card__meta">Bleu · Papier naturel</p>
+          </li>
         </ul>
         <p class="gallery__more">
-          <a class="button" href="#">Toutes les estampes sur Etsy <span aria-hidden="true">↗</span></a><!-- Etsy -->
+          <a class="button" href="estampes.html">Voir toutes les estampes</a>
         </p>
       </div>
     </section>
@@ -96,16 +168,16 @@
         <ul class="contact-list">
           <li class="contact-list__shop">
             <span class="contact-list__label">Boutique</span>
-            <a href="#">Etsy <span aria-hidden="true">↗</span></a><!-- Etsy -->
+            <a href="#">Etsy <span class="icon-external" aria-hidden="true"></span></a><!-- Etsy -->
           </li>
           <li>
             <span class="contact-list__label">Également sur</span>
-            <a href="https://www.vinted.fr/member/15245684">Vinted <span aria-hidden="true">↗</span></a>
+            <a href="https://www.vinted.fr/member/15245684">Vinted <span class="icon-external" aria-hidden="true"></span></a>
           </li>
           <li>
             <span class="contact-list__label">Instagram</span>
             <!-- TODO : lien Instagram -->
-            <a href="#">Instagram <span aria-hidden="true">↗</span></a>
+            <a href="#">Instagram <span class="icon-external" aria-hidden="true"></span></a>
           </li>
           <li>
             <span class="contact-list__label">E-mail</span>
@@ -123,5 +195,7 @@
       <p><a href="mentions-legales.html">Mentions légales</a></p>
     </div>
   </footer>
+  <script src="js/carousel.js" defer></script>
+  <script src="js/lightbox.js" defer></script>
 </body>
 </html>

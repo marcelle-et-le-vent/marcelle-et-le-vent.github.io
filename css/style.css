@@ -142,6 +142,20 @@ a:hover {
 }
 
 
+/* Petite flèche « lien externe » (Boutique, Etsy, Vinted, Instagram).
+   Dessinée en SVG plutôt que le caractère ↗, que l'iPhone affiche en emoji.
+   Elle prend la couleur du texte. */
+.icon-external {
+  display: inline-block;
+  width: 0.62em;
+  height: 0.62em;
+  margin-left: 0.3em;
+  background-color: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none' stroke='black' stroke-width='1.3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2 10 10 2M4 2h6v6'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none' stroke='black' stroke-width='1.3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M2 10 10 2M4 2h6v6'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+
 /* 3. Mise en page
    -------------------------------------------------------------------------- */
 .container {
@@ -153,6 +167,35 @@ a:hover {
 
 .section {
   padding-block: var(--space-xl);
+}
+
+/* Pages secondaires (Estampes, Mentions légales) : contenu plus proche du header */
+.section--page {
+  padding-top: clamp(2rem, 1.5rem + 2vw, 3.25rem);
+}
+
+/* Fil d'Ariane des pages secondaires : « Accueil / Estampes » */
+.breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 0 var(--space-s);
+  padding: 0;
+  list-style: none;
+  font-size: 0.875rem;
+  color: var(--color-ink-soft);
+}
+
+.breadcrumb li + li::before {
+  content: "/";
+  margin: 0 0.5em;
+}
+
+.breadcrumb a {
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
 }
 
 
@@ -197,8 +240,14 @@ a:hover {
   text-decoration: none;
 }
 
+/* Logo : lien vers l'accueil, sur toutes les pages */
 .site-header__logo {
+  display: block;
   width: 3.5rem;
+}
+
+.site-header__logo img {
+  width: 100%;
 }
 
 .site-header nav {
@@ -218,6 +267,13 @@ a:hover {
 
 .site-nav a {
   text-decoration: none;
+}
+
+/* Page en cours (ex. « Estampes » sur la page Estampes) : soulignée */
+.site-nav a[aria-current="page"] {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.35em;
 }
 
 .site-nav__shop {
@@ -354,6 +410,131 @@ a:hover {
   }
 }
 
+/* Page Estampes : liens vers les collections, puis une grille par collection */
+.page-title {
+  font-size: clamp(2.75rem, 2rem + 3.25vw, 5rem);
+  line-height: 1;
+}
+
+.collections-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs) var(--space-m);
+  margin: 0 0 var(--space-l);
+  padding: 0;
+  list-style: none;
+}
+
+.collections-nav a {
+  color: var(--color-ink-soft);
+  text-decoration: none;
+}
+
+.collections-nav a:hover {
+  color: var(--color-blue);
+}
+
+.collection {
+  padding-top: var(--space-l);
+  border-top: 1px solid var(--color-paper-dark);
+  scroll-margin-top: var(--space-m); /* le titre ne colle pas au bord après un clic */
+}
+
+.collection + .collection {
+  margin-top: var(--space-xl);
+}
+
+.collection h2 {
+  margin-bottom: var(--space-s);
+}
+
+.collection__intro {
+  max-width: var(--width-text);
+  margin-bottom: var(--space-l);
+  color: var(--color-ink-soft);
+}
+
+.print-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 16rem), 1fr));
+  gap: var(--space-l) var(--space-m);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Cartes d'estampes (page Estampes et carrousel de l'accueil) */
+.print-card img {
+  width: 100%;
+  margin-bottom: var(--space-s);
+}
+
+/* Page Estampes : l'image s'ouvre en grand dans la visionneuse */
+.print-card__zoom {
+  display: block;
+  cursor: zoom-in;
+}
+
+.print-card__zoom img {
+  transition: opacity 0.2s;
+}
+
+.print-card__zoom:hover img {
+  opacity: 0.88;
+}
+
+/* Collection en surtitre, au-dessus du titre (carrousel de l'accueil) */
+.print-card__collection {
+  margin: 0 0 0.125rem;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.print-card__title {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.print-card__meta {
+  margin: 0;
+  font-size: 0.9375rem;
+  color: var(--color-ink-soft);
+}
+
+/* Mention facultative, ex. « Tirage numéroté » : en gras, juste sous l'encre et le papier */
+.print-card__note {
+  margin: 0.125rem 0 0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* Sur mobile : deux estampes par ligne */
+@media (max-width: 34rem) {
+  .print-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-m) var(--space-s);
+  }
+
+  .print-card__title {
+    font-size: 1.25rem;
+  }
+
+  .print-card__meta {
+    font-size: 0.8125rem;
+  }
+}
+
+.shop-cta {
+  margin-top: var(--space-xl);
+  padding-top: var(--space-l);
+  border-top: 1px solid var(--color-paper-dark);
+  text-align: center;
+}
+
 /* Page Mentions légales : une colonne de texte */
 .legal {
   max-width: calc(var(--width-text) + 2 * var(--gutter));
@@ -379,25 +560,248 @@ a:hover {
 /* 6. Composants
    -------------------------------------------------------------------------- */
 
-/* Galerie */
-.gallery {
+/* Titre de section avec, à droite, les flèches du carrousel */
+.section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-m);
+  margin-bottom: var(--space-m);
+}
+
+.section-head h2 {
+  margin: 0;
+}
+
+/* Carrousel : une rangée qui défile horizontalement, cartes « aimantées ».
+   3 cartes visibles sur ordinateur, 2 sur tablette, 1 et un bout sur mobile. */
+.carousel {
+  --visible: 3;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr));
-  gap: var(--space-l) var(--space-m);
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% - (var(--visible) - 1) * var(--space-m)) / var(--visible));
+  gap: var(--space-m);
+  margin: 0;
+  padding: 0 0 var(--space-s);
+  list-style: none;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+}
+
+.carousel > li {
+  scroll-snap-align: start;
+}
+
+/* Avec les flèches (script chargé), la barre de défilement est masquée */
+.carousel--enhanced {
+  scrollbar-width: none;
+}
+
+.carousel--enhanced::-webkit-scrollbar {
+  display: none;
+}
+
+@media (max-width: 60rem) {
+  .carousel {
+    --visible: 2;
+  }
+}
+
+@media (max-width: 34rem) {
+  .carousel {
+    grid-auto-columns: 78%;
+    gap: var(--space-s);
+  }
+}
+
+.carousel__controls {
+  display: flex;
+  gap: var(--space-xs);
+}
+
+.carousel__controls[hidden] {
+  display: none;
+}
+
+.carousel__button {
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 1px solid var(--color-ink);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--color-ink);
+  font: inherit;
+  font-size: 1.125rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.carousel__button:hover:not(:disabled) {
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+
+.carousel__button:disabled {
+  opacity: 0.25;
+  cursor: default;
+}
+
+/* Visionneuse (page Estampes) : estampe en grand, plein écran, sur un voile
+   couleur papier qui laisse deviner la page floutée derrière */
+.lightbox {
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  max-height: none;
   margin: 0;
   padding: 0;
-  list-style: none;
+  border: 0;
+  background: transparent;
+  color: var(--color-ink);
 }
 
-.gallery__item {
+.lightbox[open] {
+  display: grid;
+  grid-template-columns: 4rem minmax(0, 1fr) 4rem;
+  grid-template-rows: minmax(0, 1fr); /* l'image est contenue dans la hauteur de l'écran */
+  align-items: center;
+}
+
+.lightbox:focus {
+  outline: none;
+}
+
+.lightbox::backdrop {
+  background: rgb(244 239 230 / 0.6); /* --color-paper, transparent : on reconnaît la page */
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+
+/* La page derrière ne défile pas pendant que la visionneuse est ouverte */
+html:has(.lightbox[open]) {
+  overflow: hidden;
+}
+
+.lightbox__figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
   margin: 0;
+  padding: var(--space-m) 0;
 }
 
-.gallery__item figcaption {
-  margin-top: var(--space-s);
+.lightbox__image {
+  width: auto;
+  max-width: 100%;
+  max-height: calc(100% - 8.5rem); /* place pour la légende */
+  object-fit: contain;
+  box-shadow: 0 0.25rem 1.5rem rgb(26 26 26 / 0.12); /* détache l'estampe du fond flouté */
+}
+
+/* Légende : collection en surtitre, titre, puis les détails en gris */
+.lightbox__caption {
+  margin-top: var(--space-m);
+  text-align: center;
+}
+
+.lightbox__collection {
+  margin: 0 0 0.125rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.lightbox__title {
+  margin: 0 0 0.25rem;
   font-family: var(--font-sans);
-  font-size: var(--text-small);
+  font-size: 1.75rem;
+  line-height: 1.1;
+}
+
+.lightbox__meta {
+  margin: 0;
+  font-size: 0.9375rem;
   color: var(--color-ink-soft);
+}
+
+.lightbox__note {
+  margin: 0.125rem 0 0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* Lien « Voir la collection » (visionneuse ouverte depuis le carrousel) */
+.lightbox__more {
+  display: inline-block;
+  margin-top: var(--space-s);
+  font-size: 0.9375rem;
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+
+.lightbox__more[hidden] {
+  display: none;
+}
+
+.lightbox__close,
+.lightbox__nav {
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 1px solid var(--color-ink);
+  border-radius: 50%;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font: inherit;
+  font-size: 1.125rem;
+  line-height: 1;
+  cursor: pointer;
+  justify-self: center;
+}
+
+.lightbox__close {
+  position: absolute;
+  top: var(--space-s);
+  right: var(--space-s);
+  font-size: 1.5rem;
+}
+
+.lightbox__close:hover,
+.lightbox__nav:hover {
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+
+/* Sur mobile : image sur toute la largeur, flèches en bas de l'écran */
+@media (max-width: 34rem) {
+  .lightbox[open] {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: minmax(0, 1fr) auto;
+  }
+
+  .lightbox__figure {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    padding: var(--space-l) var(--space-s) 0;
+  }
+
+  .lightbox__nav {
+    grid-row: 2;
+    margin-bottom: var(--space-m);
+  }
+
+  .lightbox__nav--prev {
+    grid-column: 1;
+  }
+
+  .lightbox__nav--next {
+    grid-column: 2;
+  }
 }
 
 .gallery__more {
@@ -466,4 +870,8 @@ a:hover {
 .placeholder {
   aspect-ratio: 4 / 5;
   background: var(--color-paper-dark);
+}
+
+.todo {
+  font-style: italic;
 }
