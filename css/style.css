@@ -615,9 +615,30 @@ a:hover {
   }
 }
 
+/* Carrousel d'une seule photo à la fois (À propos), sur toutes les largeurs */
+.carousel.carousel--single {
+  grid-auto-columns: 100%;
+  gap: var(--space-s);
+  padding-bottom: 0;
+}
+
 .carousel__controls {
   display: flex;
+  align-items: center;
   gap: var(--space-xs);
+}
+
+/* À propos : flèches et compteur sous la photo, alignés à droite */
+.about__controls {
+  justify-content: flex-end;
+  margin-top: var(--space-s);
+}
+
+.carousel__count {
+  min-width: 3.5em;
+  font-size: 0.875rem;
+  text-align: center;
+  color: var(--color-ink-soft);
 }
 
 .carousel__controls[hidden] {
@@ -867,11 +888,6 @@ html:has(.lightbox[open]) {
 
 /* 7. Utilitaires temporaires (à supprimer quand le contenu réel est en place)
    -------------------------------------------------------------------------- */
-.placeholder {
-  aspect-ratio: 4 / 5;
-  background: var(--color-paper-dark);
-}
-
 .todo {
   font-style: italic;
 }

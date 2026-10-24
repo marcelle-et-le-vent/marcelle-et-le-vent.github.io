@@ -49,7 +49,7 @@
 
     <!-- 2. Estampes : carrousel d'une sélection (jamais deux versions d'une même estampe côte à côte).
          Un clic sur une estampe l'ouvre dans la visionneuse, avec un lien vers sa collection. -->
-    <section id="estampes" class="section" aria-labelledby="estampes-titre">
+    <section id="estampes" class="section" aria-labelledby="estampes-titre" data-carousel-root>
       <div class="container">
         <div class="section-head">
           <h2 id="estampes-titre">Estampes</h2>
@@ -82,10 +82,10 @@
           <li class="print-card">
             <a class="print-card__zoom" href="images/gallery/I_Ronron_Noir_PapierLisse_retouche.webp" data-zoom data-collection-href="estampes.html#ronron">
               <img src="images/gallery/I_Ronron_Noir_PapierLisse_retouche.webp" width="1174" height="1600" loading="lazy" decoding="async"
-                   alt="Linogravure « Ronron I », encre noire sur papier lisse.">
+                   alt="Linogravure « Dormons, les livres ronronnent », encre noire sur papier lisse.">
             </a>
             <p class="print-card__collection">Ronron</p>
-            <h3 class="print-card__title">I</h3>
+            <h3 class="print-card__title">Dormons, les livres ronronnent</h3>
             <p class="print-card__meta">Noir · Papier lisse</p>
           </li>
           <li class="print-card">
@@ -119,10 +119,10 @@
           <li class="print-card">
             <a class="print-card__zoom" href="images/gallery/II_Ronron_Bleu_PapierNaturel_retouche.webp" data-zoom data-collection-href="estampes.html#ronron">
               <img src="images/gallery/II_Ronron_Bleu_PapierNaturel_retouche.webp" width="1171" height="1600" loading="lazy" decoding="async"
-                   alt="Linogravure « Ronron II », encre bleue sur papier naturel.">
+                   alt="Linogravure « Viens ! », encre bleue sur papier naturel.">
             </a>
             <p class="print-card__collection">Ronron</p>
-            <h3 class="print-card__title">II</h3>
+            <h3 class="print-card__title">Viens&nbsp;!</h3>
             <p class="print-card__meta">Bleu · Papier naturel</p>
             <p class="print-card__note">Tirage numéroté</p>
           </li>
@@ -145,10 +145,41 @@
     <!-- 3. À propos -->
     <section id="a-propos" class="section" aria-labelledby="a-propos-titre">
       <div class="container about">
-        <!-- TODO : photo (atelier, gravure…). Remplacer le bloc par :
-        <img class="about__photo" src="images/display/nom-du-fichier.jpg" alt="Description de la photo" width="800" height="1000" loading="lazy">
-        -->
-        <div class="about__photo placeholder" role="img" aria-label="Photo à venir"></div>
+        <!-- Photos de l'atelier : carrousel d'une photo à la fois (format 4:5, 1200 × 1500 px) -->
+        <div class="about__media" data-carousel-root>
+          <ul class="carousel carousel--single" data-carousel aria-label="Photos de l'atelier">
+            <li>
+              <img class="about__photo" src="images/apropos/APropos_MainGravure_LisonsLaPluieSeTait_13_retouche.webp" width="1200" height="1500" loading="lazy" decoding="async"
+                   alt="Gravure d'une plaque de linoléum, entre le rouleau, les encres et la presse.">
+            </li>
+            <li>
+              <img class="about__photo" src="images/apropos/APropos_MainGravure_LisonsLaPluieSeTait_01_retouche.webp" width="1200" height="1500" loading="lazy" decoding="async"
+                   alt="Gravure d'une plaque de linoléum à la gouge, à l'atelier.">
+            </li>
+            <li>
+              <img class="about__photo" src="images/apropos/APropos_OutilsLinogravure_Plongeons_02_retouche.webp" width="1200" height="1500" loading="lazy" decoding="async"
+                   alt="Outils de linogravure : rouleaux, gouges, spatule, encre et la plaque gravée de « Plongeons ».">
+            </li>
+            <li>
+              <img class="about__photo" src="images/apropos/APropos_DessinPlaqueOutils_AuCreuxDunLivre_07_retouche.webp" width="1200" height="1500" loading="lazy" decoding="async"
+                   alt="Dessin d'« Au creux d'un livre », reporté sur la plaque de linoléum, avec crayons et taille-crayon.">
+            </li>
+            <li>
+              <img class="about__photo" src="images/apropos/APropos_CroquisDessins_04_retouche.webp" width="1200" height="1500" loading="lazy" decoding="async"
+                   alt="Croquis préparatoires de « Sautons », de la première esquisse au dessin abouti.">
+            </li>
+            <li>
+              <img class="about__photo" src="images/apropos/APropos_CroquisDessins_10_retouche.webp" width="1200" height="1500" loading="lazy" decoding="async"
+                   alt="Carnet de croquis posé sur des dessins préparatoires.">
+            </li>
+          </ul>
+          <!-- Flèches et compteur : affichés par js/carousel.js -->
+          <div class="carousel__controls about__controls" hidden>
+            <button class="carousel__button" type="button" data-carousel-prev aria-label="Photo précédente">←</button>
+            <span class="carousel__count" data-carousel-count aria-live="polite"></span>
+            <button class="carousel__button" type="button" data-carousel-next aria-label="Photo suivante">→</button>
+          </div>
+        </div>
         <div class="about__text">
           <h2 id="a-propos-titre">À propos</h2>
           <p><strong>Marcelle et le Vent</strong> répond à l'alliance entre deux passions, l'une pour le dessin, l'autre pour la littérature.</p>
