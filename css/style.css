@@ -536,6 +536,18 @@ a:hover {
   }
 }
 
+/* Sur mobile : encre et papier sur deux lignes, sans le point séparateur
+   (page Estampes et carrousel de l'accueil) */
+@media (max-width: 34rem) {
+  .print-card__meta span {
+    display: block;
+  }
+
+  .print-card__meta .print-card__sep {
+    display: none;
+  }
+}
+
 .shop-cta {
   margin-top: var(--space-xl);
   padding-top: var(--space-l);
