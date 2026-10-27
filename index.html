@@ -26,7 +26,7 @@
           <li><a href="estampes.html">Estampes</a></li>
           <li><a href="#a-propos">À propos</a></li>
           <li><a href="#contact">Contact</a></li>
-          <li><a class="site-nav__shop" href="#">Boutique <span class="icon-external" aria-hidden="true"></span></a></li><!-- Etsy -->
+          <li><a class="site-nav__shop" href="#" data-shop>Boutique <span class="icon-external" aria-hidden="true"></span></a></li><!-- Etsy -->
         </ul>
       </nav>
     </div>
@@ -40,7 +40,7 @@
         <div class="hero__text">
           <h1 class="hero__title">Marcelle <span class="hero__title-line">et le Vent</span></h1>
           <p class="hero__lead">Linogravures imaginées, gravées et imprimées à l'atelier.</p>
-          <a class="button" href="#">Voir la boutique <span class="icon-external" aria-hidden="true"></span></a><!-- Etsy -->
+          <a class="button" href="#" data-shop>Voir la boutique <span class="icon-external" aria-hidden="true"></span></a><!-- Etsy -->
         </div>
         <img class="hero__image" src="images/gallery/image-vitrine-encre.webp" width="1400" height="1550"
              alt="Linogravure « Plongeons » à l'encre noire : une silhouette en maillot de bain, penchée au bout d'un plongeoir, s'apprête à plonger dans un grand livre ouvert.">
@@ -199,7 +199,9 @@
         <ul class="contact-list">
           <li class="contact-list__shop">
             <span class="contact-list__label">Boutique</span>
-            <a href="#">Etsy <span class="icon-external" aria-hidden="true"></span></a><!-- Etsy -->
+            <!-- Etsy : à l'ouverture de la boutique, remplacer cette ligne par
+            <a href="ADRESSE_ETSY">Etsy <span class="icon-external" aria-hidden="true"></span></a> -->
+            <span class="contact-list__soon">Etsy — bientôt</span>
           </li>
           <li>
             <span class="contact-list__label">Également sur</span>
@@ -228,5 +230,6 @@
   </footer>
   <script src="js/carousel.js" defer></script>
   <script src="js/lightbox.js" defer></script>
+  <script src="js/shop.js" defer></script>
 </body>
 </html>

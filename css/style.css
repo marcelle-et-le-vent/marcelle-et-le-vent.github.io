@@ -7,7 +7,7 @@
    4. En-tête et pied de page
    5. Sections
    6. Composants
-   7. Utilitaires temporaires
+   7. Boutique Etsy à venir
    ========================================================================== */
 
 
@@ -448,10 +448,18 @@ a:hover {
   margin-bottom: var(--space-s);
 }
 
+/* Texte de présentation : sur toute la largeur de la grille d'estampes */
 .collection__intro {
-  max-width: var(--width-text);
   margin-bottom: var(--space-l);
   color: var(--color-ink-soft);
+}
+
+.collection__intro p {
+  margin-bottom: 0.4rem; /* paragraphes plus rapprochés que dans le reste du site */
+}
+
+.collection__intro p:last-child {
+  margin-bottom: 0;
 }
 
 .print-grid {
@@ -886,8 +894,65 @@ html:has(.lightbox[open]) {
 }
 
 
-/* 7. Utilitaires temporaires (à supprimer quand le contenu réel est en place)
+/* 7. Boutique Etsy à venir
+   Fenêtre ouverte par les liens « Boutique » tant que la boutique n'est pas
+   en ligne (js/shop.js). Même fond flouté que la visionneuse.
    -------------------------------------------------------------------------- */
-.todo {
-  font-style: italic;
+.shop-dialog {
+  width: min(26rem, calc(100% - 2 * var(--space-s)));
+  padding: var(--space-l) var(--space-m) var(--space-m);
+  border: 1px solid var(--color-paper-dark);
+  background: var(--color-paper);
+  color: var(--color-ink);
+  text-align: center;
+  box-shadow: 0 0.5rem 2rem rgb(26 26 26 / 0.12);
+}
+
+.shop-dialog::backdrop {
+  background: rgb(244 239 230 / 0.6);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+
+.shop-dialog__title {
+  margin-bottom: var(--space-xs);
+  font-family: var(--font-sans);
+  font-size: 1.75rem;
+  line-height: 1.1;
+}
+
+.shop-dialog .button {
+  margin-top: var(--space-s);
+}
+
+.shop-dialog__contact {
+  margin: var(--space-m) 0 0;
+  font-size: 0.875rem;
+  color: var(--color-ink-soft);
+}
+
+.shop-dialog__close {
+  position: absolute;
+  top: var(--space-xs);
+  right: var(--space-xs);
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 0;
+  background: transparent;
+  color: var(--color-ink);
+  font: inherit;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+/* Section Contact : boutique pas encore ouverte */
+.contact-list__soon {
+  font-family: var(--font-sans);
+  font-size: 1.5rem;
+  color: var(--color-ink-soft);
+}
+
+.shop-dialog:focus {
+  outline: none;
 }

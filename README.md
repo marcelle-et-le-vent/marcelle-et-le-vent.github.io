@@ -14,6 +14,7 @@ CNAME                 Nom de domaine (marcelle-et-le-vent.fr), géré depuis Git
 css/style.css         Styles — couleurs, polices et espacements en haut du fichier
 js/carousel.js        Flèches des carrousels de l'accueil (estampes, photos de l'atelier)
 js/lightbox.js        Visionneuse des estampes (agrandissement au clic)
+js/shop.js            Fenêtre « La boutique Etsy arrive… » tant que la boutique n'est pas ouverte
 fonts/                Polices hébergées dans le site (Barlow Condensed, DM Sans) et leurs licences
 favicon.ico           Icône de l'onglet du navigateur
 images/logo/          Logo et icônes (écrans haute définition, écran d'accueil iPhone)
@@ -48,9 +49,10 @@ Le site est mis à jour sur GitHub Pages une à deux minutes après le push.
 
 ## Reste à faire
 
-- Lien vers la boutique Etsy : remplacer les `href="#"` marqués `<!-- Etsy -->` dans `index.html`.
+- Lien vers la boutique Etsy : remplacer les `href="#"` marqués `<!-- Etsy -->` dans les pages
+  (la fenêtre « La boutique Etsy arrive… » disparaît alors d'elle-même), et rétablir le lien
+  Etsy de la section Contact (`index.html`, voir le commentaire).
 - Lien Instagram.
-- Textes de présentation des collections (page Estampes).
 
 ## Images
 
