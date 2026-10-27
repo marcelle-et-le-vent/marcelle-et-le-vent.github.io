@@ -20,8 +20,8 @@
     '<figure class="lightbox__figure">' +
     '  <img class="lightbox__image" alt="">' +
     '  <figcaption class="lightbox__caption">' +
-    '    <p class="lightbox__collection"></p>' +
-    '    <p class="lightbox__title"></p>' +
+    '    <p class="lightbox__collection" translate="no"></p>' +
+    '    <p class="lightbox__title" translate="no"></p>' +
     '    <p class="lightbox__meta"></p>' +
     '    <p class="lightbox__note"></p>' +
     '    <a class="lightbox__more" href="">Voir la collection <span aria-hidden="true">→</span></a>' +
