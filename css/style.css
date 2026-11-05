@@ -654,6 +654,24 @@ a:hover {
   margin-top: var(--space-s);
 }
 
+/* Carte à plusieurs photos (Marque-pages) : photos au format 4:5, flèches
+   plus petites et compteur sous la photo, au-dessus du titre */
+.print-card__carousel img {
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  margin-bottom: 0;
+}
+
+.print-card__controls {
+  margin: var(--space-xs) 0 var(--space-s);
+}
+
+.print-card__controls .carousel__button {
+  width: 2.25rem;
+  height: 2.25rem;
+  font-size: 1rem;
+}
+
 .carousel__count {
   min-width: 3.5em;
   font-size: 0.875rem;

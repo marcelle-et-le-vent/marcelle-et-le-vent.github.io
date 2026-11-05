@@ -48,6 +48,7 @@
           <li><a href="#ronron">Ronron</a></li>
           <li><a href="#au-creux-dun-livre">Au creux d'un livre</a></li>
           <li><a href="#entrons">Entrons</a></li>
+          <li><a href="#marque-pages">Marque-pages</a></li>
         </ul>
       </nav>
 
@@ -247,6 +248,76 @@
         </ul>
       </section>
 
+      <!--
+        Marque-pages : une carte par couleur, avec plusieurs photos qui défilent
+        (carrousel d'une photo à la fois, format 4:5, 1200 × 1500 px).
+        Chaque photo s'ouvre aussi en grand dans la visionneuse.
+      -->
+      <section id="marque-pages" class="collection" aria-labelledby="marque-pages-titre">
+        <h2 id="marque-pages-titre">Marque-pages</h2>
+        <ul class="print-grid">
+          <li class="print-card" data-carousel-root>
+            <ul class="carousel carousel--single print-card__carousel" data-carousel aria-label="Photos du marque-page Ronron bleu">
+              <li>
+                <a class="print-card__zoom" href="images/gallery/MarquePage_Ronron_Bleu_1_dessus.webp" data-zoom>
+                  <img src="images/gallery/MarquePage_Ronron_Bleu_1_dessus.webp" width="1200" height="1500" loading="lazy" decoding="async"
+                       alt="Marque-page « Ronron », encre bleue : un chat endormi sur une pile de livres.">
+                </a>
+              </li>
+              <li>
+                <a class="print-card__zoom" href="images/gallery/MarquePage_Ronron_Bleu_2_mise-en-scene.webp" data-zoom>
+                  <img src="images/gallery/MarquePage_Ronron_Bleu_2_mise-en-scene.webp" width="1200" height="1500" loading="lazy" decoding="async"
+                       alt="Marque-page « Ronron » bleu glissé dans un livre.">
+                </a>
+              </li>
+              <li>
+                <a class="print-card__zoom" href="images/gallery/MarquePage_Ronron_Bleu_3_detail-1.webp" data-zoom>
+                  <img src="images/gallery/MarquePage_Ronron_Bleu_3_detail-1.webp" width="903" height="1129" loading="lazy" decoding="async"
+                       alt="Détail du marque-page « Ronron » bleu dépassant d'un livre : le chat endormi.">
+                </a>
+              </li>
+            </ul>
+            <!-- Flèches et compteur : affichés par js/carousel.js -->
+            <div class="carousel__controls print-card__controls" hidden>
+              <button class="carousel__button" type="button" data-carousel-prev aria-label="Photo précédente">←</button>
+              <span class="carousel__count" data-carousel-count aria-live="polite"></span>
+              <button class="carousel__button" type="button" data-carousel-next aria-label="Photo suivante">→</button>
+            </div>
+            <h3 class="print-card__title" translate="no">Ronron</h3>
+            <p class="print-card__meta"><span>Bleu</span></p>
+          </li>
+          <li class="print-card" data-carousel-root>
+            <ul class="carousel carousel--single print-card__carousel" data-carousel aria-label="Photos du marque-page Ronron turquoise">
+              <li>
+                <a class="print-card__zoom" href="images/gallery/MarquePage_Ronron_Turquoise_1_dessus.webp" data-zoom>
+                  <img src="images/gallery/MarquePage_Ronron_Turquoise_1_dessus.webp" width="1200" height="1500" loading="lazy" decoding="async"
+                       alt="Marque-page « Ronron », encre turquoise : un chat endormi sur une pile de livres.">
+                </a>
+              </li>
+              <li>
+                <a class="print-card__zoom" href="images/gallery/MarquePage_Ronron_Turquoise_2_mise-en-scene.webp" data-zoom>
+                  <img src="images/gallery/MarquePage_Ronron_Turquoise_2_mise-en-scene.webp" width="1200" height="1500" loading="lazy" decoding="async"
+                       alt="Marque-page « Ronron » turquoise glissé dans un livre.">
+                </a>
+              </li>
+              <li>
+                <a class="print-card__zoom" href="images/gallery/MarquePage_Ronron_Turquoise_3_detail-1.webp" data-zoom>
+                  <img src="images/gallery/MarquePage_Ronron_Turquoise_3_detail-1.webp" width="986" height="1232" loading="lazy" decoding="async"
+                       alt="Détail du marque-page « Ronron » turquoise dépassant d'un livre : le chat endormi.">
+                </a>
+              </li>
+            </ul>
+            <div class="carousel__controls print-card__controls" hidden>
+              <button class="carousel__button" type="button" data-carousel-prev aria-label="Photo précédente">←</button>
+              <span class="carousel__count" data-carousel-count aria-live="polite"></span>
+              <button class="carousel__button" type="button" data-carousel-next aria-label="Photo suivante">→</button>
+            </div>
+            <h3 class="print-card__title" translate="no">Ronron</h3>
+            <p class="print-card__meta"><span>Turquoise</span></p>
+          </li>
+        </ul>
+      </section>
+
       <!-- Vers la boutique -->
       <aside class="shop-cta">
         <p>Les estampes sont disponibles sur la boutique Etsy.</p>
@@ -261,6 +332,7 @@
       <p><a href="mentions-legales.html">Mentions légales</a></p>
     </div>
   </footer>
+  <script src="js/carousel.js" defer></script>
   <script src="js/lightbox.js" defer></script>
   <script src="js/shop.js" defer></script>
 </body>
